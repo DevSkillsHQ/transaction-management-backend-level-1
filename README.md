@@ -1,42 +1,54 @@
+# Interview Assignment: Account Management Backend - Level 2
+
 👋 Hi there!
 
-In this interview challenge, you'll build a backend service that implements the Account Management API. The consumers of this API will use it to amend/fetch balances of different accounts.
+In this interview assignment, your task is to build a backend service that implements a predefined API spec.
 
-Find the API specification in [here](api-specification.yml).
+The API defines a set of operations for creating and reading account transactions. 
 
-There is also a test suite that defines different scenarios for validating the functionality of the service. Find it under [api-tests.json](api-tests.json). Run with:
+See the [API spec](api-specification.yml) to get the idea of how the service should work. 
+
+## What's included 🗂
+Apart from the API spec, we've also added an [API test suite](api-tests.json) that verifies the service functionality.
+
+Run the tests with:
+
 ```shell script
-npm install -g newman
-newman run api-tests.json --reporters cli,json
-``` 
+npm install -g newman // Install the test runner
+newman run api-tests.json // Run the tests
+```
 
-### ☝ What we're trying to achieve here
-The main goal of this challenge is to give you a chance to demonstrate your software engineering skills. In particular, your understanding of nuances when building a stateful REST API service.
+## What we're looking for ⭐️
 
-### ℹ️ How to submit your solution?
-Start with cloning this repository and then follow this checklist that will help you ensure that everything is in place:
+- **Use a SQL database as the service datastore.** We want to see how you design your database schema and SQL queries for working with the service data.
+- **Create a backend service that implements the provided API.** Make sure all predefined API tests pass. It will involve the following:
+  - Handling invalid HTTP requests;
+  - Creating new transactions;
+  - Retreiving the current account balance.
+- **Optimize the GET endpoints for speed.** When designing your service, ensure that the GET endpoints remain fast with the database growing in size.
+- **Ensure no lost updates.** When submitting a new transaction, make sure no account balance updates are lost. E.g., when having two concurrent requests updating the same account balance.
+- **Organize your code as a set of low-coupled modules**. Avoid duplication and extract re-usable modules where it makes sense, but don't break things apart needlessly. We want to see that you can create a codebase that is easy to maintain.
+- **Document your decisions.** Extend this README.md with info about how to run your application along with any hints that will help us review your submission and better understand the decisions you made.
 
- - [ ] I've built a backend application that implements the Account Management API.
- - [ ] The tests in [api-tests.json](api-tests.json) pass.
- - [ ] I've saved a copy of a successful [api-tests.json](api-tests.json) run under the `./newman/` directory.
- - [ ] I've created all other tests I find necessary.
- - [ ] The service stores data in a SQL database.
- - [ ] The service datastore remains strongly consistent at any point in time.
- - [ ] The performance of the service does not deteriorate with datastore growth.
- 
- Whenever you're done, push your changes and create a [Pull Request in GitHub](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request). 
- 
- Another engineer will do a code review. And they might ask you a couple of questions, so watch out. 👀
+## How to submit your solution 📬
 
- **As soon as your code reviewer merged your PR, then your interview is considered completed.** 😌
- 
- ### 🤔 FAQ
- * Q: What resources am I allowed to use?
-   * A: This assignment simulates a real-world engineering problem, so feel free to use any resources you'd normally use.
- * Q: How much time do I have?
-   * A: Based on our data, for someone who's seen this assignment for the first time, it'd take them at most three hours to complete. Anyway, we'd appreciate it if you submitted your implementation within seven days since you got an invite. 
- * Q: What if I get stuck?
-   * A: Feel free to [create an issue in GitHub](https://docs.github.com/en/github/managing-your-work-on-github/creating-an-issue) with the description of your problem.
+1. Commit your changes to a new branch called implementation.
+2. Create a Pull Request from implementation.
 
+## What to expect next 👀
+
+1. An engineer will do a code review of your Pull Request. They might ask questions that you'll need to answer, so please watch for GitHub notifications in your mailbox.
+2. In the end, the engineer who did the code review will merge your Pull Request. That's when your assignment is over.
+
+## FAQ ❓
+
+- Q: What resources am I allowed to use?
+  - A: This assignment simulates a real-world engineering task, so feel free to use any resources you'd typically use.
+- Q: How much time should I spend?
+  - A: Try not to spend more than 3 hours.
+- Q: What if I get stuck?
+  - A: Feel free to create a GitHub issue on this repository describing your problem.
+  
 ---
-Baked with ❤️ by [DevSkills](https://devskills.co).
+
+Made by [DevSkills](https://devskills.co).
