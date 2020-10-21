@@ -1,4 +1,4 @@
-# Interview Assignment: Account Management Backend - Level 2
+# Interview Assignment: Account Management Backend - Level 1
 
 👋 Hi there!
 
