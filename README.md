@@ -9,13 +9,19 @@ The API defines a set of operations for creating and reading account transaction
 See the [API spec](api-specification.yml) to get the idea of how the service should work. 
 
 ## What's included 🗂
-Apart from the API spec, we've also added an [API test suite](api-tests.json) that verifies the service functionality.
+We've added the [Account Management API](api-specification.yml) specification defined in the Open API format and [Cypress](https://www.cypress.io/) test suites to validate the Backend.
 
-Run the tests with:
+Before running the tests, update the `apiUrl` (where your Backend runs) in [cypress.json](cypress.json), and then run your app.
 
+Run the tests:
 ```shell script
-npm install -g newman // Install the test runner
-newman run api-tests.json // Run the tests
+npm install # Install the required test dependencies
+npm run test # Run all tests
+```
+Or with yarn:
+```shell script
+yarn install # Install the required test dependencies
+yarn run test # Run all tests
 ```
 
 ## What we're looking for ⭐️
