@@ -1,0 +1,11 @@
+{
+  "name": "account-management-backend-level-1",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "test": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^5.4.0"
+  }
+}
