@@ -30,7 +30,7 @@ Your task is to build a backend service that implements a predefined API spec.
 
 The API defines a set of operations for creating and reading account transactions. 
 
-See the [API spec](api-specification.yml) to get the idea of how the service should function. 
+See this [API spec](api-specification.yml) to get the idea of how the service should function. 
 
 ## Boilerplate 🗂
 We've added the [Account Management API](api-specification.yml) specification defined in the Open API format and [Cypress](https://www.cypress.io/) test suites to validate the Backend.
