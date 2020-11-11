@@ -9,8 +9,12 @@ Regardless of how your interview process goes, you'll get the following two thin
 - Feedback on how well you did. The hiring team will use a calibrated evaluation rubric to assess your work, so they can share parts of it with you.
 
 ## Before writing any code, **please read this README carefully!** ⚠️
+To save everyone's time, this assignment follows a specific structure which boils down to the following two things:
 
-Otherwise, you'll likely end up wasting your time by building something that won't be evaluated anyway.
+- Assessing a predefined list of tech competences
+- Using automated tests to validate the acceptance criteria.
+
+So to avoid wasting your time, please make sure to understand what's expected of your submission. If something is not clear, [ask a question](#last-hint-before-starting-%EF%B8%8F).
 
 ## How much time you'll need ⏳
 
