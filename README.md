@@ -11,7 +11,7 @@ Regardless of how your interview process goes, you'll get the following two thin
 ## Before writing any code, **please read this README carefully!** ⚠️
 To save everyone's time, this assignment follows a specific structure which boils down to the following two things:
 
-- Assessing a predefined list of tech competences
+- Assessing a predefined list of tech competences.
 - Using automated tests to validate the acceptance criteria.
 
 So to avoid wasting your time, please make sure to understand what's expected of your submission. If something is not clear, [ask a question](#last-hint-before-starting-%EF%B8%8F).
