@@ -14,7 +14,9 @@ To save everyone's time, this assignment follows a specific structure which boil
 - Using automated tests to validate your submission.
 - Assessing a predefined list of tech competences.
 
-So to avoid wasting your time, please make sure to understand what's expected of your submission. If something is not clear, [ask a question](#last-hint-before-starting-%EF%B8%8F).
+So to avoid wasting your time, please make sure to understand what's expected of your submission. 
+
+If something is not clear, [ask a question](#last-hint-before-starting-%EF%B8%8F).
 
 ## How much time you'll need ⏳
 
