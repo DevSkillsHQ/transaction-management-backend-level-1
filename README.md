@@ -12,15 +12,15 @@ Regardless of how your interview process goes, you'll get the following two thin
 
 Otherwise, you'll likely end up wasting your time by building something that won't be evaluated anyway.
 
-## How much time you'll need
+## How much time you'll need ⏳
 
 Try not to spend more than **three hours**. Document everything that you haven't managed to complete.
 
-## Last hint before starting
+## Last hint before starting ☝️
 
 If you get stuck with something (e.g., tests don't pass in the pipeline, etc.), please describe your problem in a new GitHub issue on this repository. A human will help you. 🤚
 
-## Finally, what you're going to build
+## Finally, what you're going to build 👀
 
 Your task is to build a backend service that implements a predefined API spec.
 
@@ -28,7 +28,7 @@ The API defines a set of operations for creating and reading account transaction
 
 See the [API spec](api-specification.yml) to get the idea of how the service should function. 
 
-## What's included 🗂
+## Boilerplate 🗂
 We've added the [Account Management API](api-specification.yml) specification defined in the Open API format and [Cypress](https://www.cypress.io/) test suites to validate the Backend.
 
 Before running the tests, update the `apiUrl` (where your Backend runs) in [cypress.json](cypress.json), and then run your app.
@@ -39,7 +39,7 @@ yarn install # Install the required test dependencies
 yarn run test # Run all tests
 ```
 
-## What we're looking for ⭐️
+## The assessment areas 🚩
 
 - **Use a SQL database as the service datastore.** We want to see how you design your database schema and SQL queries for working with the service data.
 - **Create a backend service that implements the provided API.** Make sure all predefined API tests pass. It will involve the following:
@@ -53,7 +53,7 @@ yarn run test # Run all tests
 ## How to submit your solution 📬
 1. Update the [`build`](package.json#L5) and [`start`](package.json#L6) scripts in [package.json](package.json) that respectively build and run your application. 
 2. Commit and push your changes to a new branch called `implementation`. A new [GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/quickstart) run will trigger automatically based on the [predefined pipeline](.github/workflows/tests.yml). The pipeline will run the `build` and `start` scripts from above to spin up your application and run the predefined Cypress tests against it.
-3. Make sure your latest build has succesfully passed (you should see a green checkbox in GitHub).
+3. Make sure your latest build has successfully passed (you should see a green checkbox in GitHub).
 4. Create a Pull Request from `implementation`.
 
 ## What to expect next 👀
@@ -66,7 +66,7 @@ yarn run test # Run all tests
 - Q: What resources am I allowed to use?
   - A: This assignment simulates a real-world engineering task, so feel free to use any resources you'd typically use.
 - Q: How much time should I spend?
-  - A: Try not to spend more than 3 hours.
+  - A: Try not to spend more than **three hours**. Document everything that you haven't managed to complete.
 - Q: What if I get stuck?
   - A: Feel free to create a GitHub issue on this repository describing your problem.
   
