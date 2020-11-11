@@ -8,7 +8,7 @@ Regardless of how your interview process goes, you'll get the following two thin
 - A great contribution to your dev portfolio by completing this assignment.
 - Feedback on how well you did. The hiring team will use a calibrated evaluation rubric to assess your work, so they can share parts of it with you.
 
-### **Please carefully read this README** before you start writing any code! ⚠️
+## Before writing any code, **please read this README carefully!** ⚠️
 
 Otherwise, you'll likely end up wasting your time by building something that won't be evaluated anyway.
 
