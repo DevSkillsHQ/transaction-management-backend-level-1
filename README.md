@@ -2,17 +2,31 @@
 
 Hi there! 👋
 
-This is **not** your typical interview test where you spend your personal time and don't get anything back.
+**Spoiler alert! 🚨** This is **not** your typical interview test where you spend your personal time and don't get anything back.
 
-Regardless of how your interivew process goes, you'll get the following two things:
-- This project that makes a great contribution to your dev portfolio.
-- Feedback on how well you did. The hiring team will use a calibrated evaluation rubric to assess your work, so they can share parts of it with you.  
+Regardless of how your interview process goes, you'll get the following two things:
+- A great contribution to your dev portfolio by completing this assignment.
+- Feedback on how well you did. The hiring team will use a calibrated evaluation rubric to assess your work, so they can share parts of it with you.
 
-In this interview assignment, your task is to build a backend service that implements a predefined API spec.
+### **Please carefully read this README** before you start writing any code! ⚠️
+
+Otherwise, you'll likely end up wasting your time by building something that won't be evaluated anyway.
+
+## How much time you'll need
+
+Try not to spend more than **three hours**. Document everything that you haven't managed to complete.
+
+## Last hint before starting
+
+If you get stuck with something (e.g., tests don't pass in the pipeline, etc.), please describe your problem in a new GitHub issue on this repository. A human will help you. 🤚
+
+## Finally, what you're going to build
+
+Your task is to build a backend service that implements a predefined API spec.
 
 The API defines a set of operations for creating and reading account transactions. 
 
-See the [API spec](api-specification.yml) to get the idea of how the service should work. 
+See the [API spec](api-specification.yml) to get the idea of how the service should function. 
 
 ## What's included 🗂
 We've added the [Account Management API](api-specification.yml) specification defined in the Open API format and [Cypress](https://www.cypress.io/) test suites to validate the Backend.
