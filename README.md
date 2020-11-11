@@ -1,6 +1,12 @@
 # Interview Assignment: Account Management Backend - Level 1
 
-👋 Hi there!
+Hi there! 👋
+
+This is **not** your typical interview test where you spend your personal time and don't get anything back.
+
+Regardless of how your interivew process goes, you'll get the following two things:
+- This project that makes a great contribution to your dev portfolio.
+- Feedback on how well you did. The hiring team will use a calibrated evaluation rubric to assess your work, so they can share parts of it with you.  
 
 In this interview assignment, your task is to build a backend service that implements a predefined API spec.
 
