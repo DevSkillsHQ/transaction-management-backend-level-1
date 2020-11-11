@@ -60,7 +60,7 @@ yarn run test # Run all tests
 3. Make sure your latest build has successfully passed (you should see a green checkbox in GitHub).
 4. Create a Pull Request from `implementation`.
 
-## What to expect next 👀
+## What to expect next 💡
 
 1. An engineer will do a code review of your Pull Request. They might ask questions that you'll need to answer, so please watch for GitHub notifications in your mailbox.
 2. In the end, the engineer who did the code review will merge your Pull Request. That's when your assignment is over.
