@@ -37,7 +37,7 @@ See this [API spec](api-specification.yml) to get the idea of how the service sh
 ## Boilerplate 🗂
 We've added the [Account Management API](api-specification.yml) specification defined in the Open API format and [Cypress](https://www.cypress.io/) test suites to validate the Backend.
 
-Before running the tests, update the `apiUrl` (where your Backend runs) in [cypress.json](cypress.json), and then run your app.
+Before running the tests, update the `baseUrl` (where the `/ping` healthcheck is available) and `apiUrl` (where your Backend runs) in [cypress.json](cypress.json), and then run your app.
 
 Run the tests:
 ```shell script
