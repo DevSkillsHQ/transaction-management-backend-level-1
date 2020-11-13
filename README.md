@@ -57,7 +57,7 @@ yarn run test # Run all tests
 - **Document your decisions.** Extend this README.md with info about how to run your application along with any hints that will help us review your submission and better understand the decisions you made.
 
 ## How to submit your solution 📬
-1. Update the `apiUrl` (where your Backend runs) in [cypress.json](cypress.json).
+1. Update the `baseUrl` (where the `/ping` healthcheck is available) and the `apiUrl` (where your Backend runs) in [cypress.json](cypress.json).
 2. Update the [`build`](package.json#L5) and [`start`](package.json#L6) scripts in [package.json](package.json) that respectively build and run your application. **[See examples](examples.md)**.
 3. Commit and push your changes to a new branch called `implementation`. The predefined automated tests will run in a new [GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/quickstart) build. The build will execute the `build` and `start` scripts from above to spin up your application and run the tests against it.
 4. Make sure your latest build has successfully passed (you should see a green checkbox in GitHub).
