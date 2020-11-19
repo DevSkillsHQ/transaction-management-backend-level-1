@@ -1,5 +1,4 @@
 {
-  "baseUrl": "http://localhost:8080/ping",
   "env": {
     "apiUrl": "http://localhost:8080"
   }
