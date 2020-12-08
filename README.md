@@ -1,4 +1,4 @@
-# Interview Assignment: Account Management Backend - Level 1
+# Account Management Backend - Level 1
 
 **Before getting started, please read [this guide](https://www.notion.so/Get-started-with-your-assignment-dade100d93054a6db1036ce294bdaeb6) with the instructions on how the DevSkills interview works, how to submit your solution, and how to get help.**
 
