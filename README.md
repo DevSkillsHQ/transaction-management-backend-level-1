@@ -21,16 +21,14 @@ Your task is to build a backend service that implements this [API specification]
 - **Document your decisions.** Extend this README.md with info about how to run your application along with any hints that will help us review your submission and better understand the decisions you made.
 
 ### The provided boilerplate 🗂
-* The [service specification](api-specification.yml) in the Open API format
-* Automated tests to validate your solution.
-
-To run the tests locally:
-1. Install the required test dependencies: `yarn install`.
-2. Update the `apiUrl` (where your app will run) in [cypress.json](cypress.json)
-3. Run your app.
-4. Run the tests: `yarn run test`
-
-### Before you submit your solution ⚠️
+* The [service specification](api-specification.yml) in the Open API format.
+* Automated tests to validate your solution. To run locally:
+  * Install the required test dependencies: `yarn install`.
+  * Update the `apiUrl` (where your app will run) in [cypress.json](cypress.json).
+  * Run your app.
+  Run the tests: `yarn run test`.
+  
+### Before submitting your solution ⚠️
 1. Update the `apiUrl` (where your Backend runs) in [cypress.json](cypress.json).
 2. Update the [`build`](package.json#L5) and [`start`](package.json#L6) scripts in [package.json](package.json) that respectively build and run your application. **[See examples](examples.md)**.
 
