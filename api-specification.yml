@@ -15,13 +15,13 @@ components:
       required:
         - account_id
         - amount
-    Balance:
+    AccountBalance:
       type: object
       properties:
         balance:
           type: integer
       required:
-        - amount
+        - balance
   examples:
     PositiveAmount:
       value:
@@ -31,7 +31,7 @@ components:
       value:
         account_id: '5ae0ef78-e902-4c40-9f53-8cf910587312'
         amount: -4
-    PositiveBalance:
+    PositiveAccountBalance:
       value:
         balance: 10
 paths:
@@ -91,9 +91,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Balance'
+                $ref: '#/components/schemas/AccountBalance'
               examples:
-                PositiveBalance:
-                  $ref: '#/components/examples/PositiveBalance'
+                PositiveAccountBalance:
+                  $ref: '#/components/examples/PositiveAccountBalance'
         '404':
           description: Account not found.
