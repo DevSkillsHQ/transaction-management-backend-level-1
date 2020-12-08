@@ -29,7 +29,7 @@ Your task is to build a backend service that implements this [API specification]
   * Run the tests with `yarn run test`.
   
 ### Before submitting your solution ⚠️
-1. Update the `apiUrl` (where your Backend runs) in [cypress.json](cypress.json).
+1. Update the `apiUrl` (where your app will run) in [cypress.json](cypress.json).
 2. Update the [`build`](package.json#L5) and [`start`](package.json#L6) scripts in [package.json](package.json) that respectively build and run your application. **[See examples](https://www.notion.so/devskills/Backend-78f49bea524148228f29ceb446157474)**.
 
 ---
