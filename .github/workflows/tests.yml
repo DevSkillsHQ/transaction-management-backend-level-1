@@ -17,8 +17,8 @@ jobs:
       - name: Run tests
         uses: cypress-io/github-action@v2
         with:
-          build: yarn run build
-          start: yarn run start
+          build: npm run build
+          start: npm run start
           wait-on: ${{ steps.fetchApiUrl.outputs.apiUrl }}
       - name: Set repo env var
         if: always()
