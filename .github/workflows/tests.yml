@@ -35,7 +35,7 @@ jobs:
           url: https://app.devskills.co/api/assignment-status
           body: '{"assignmentRepository": "${{ env.github_repo }}","results": ${{ steps.fetchTestResults.outputs.results }}}'
       - uses: joelwmale/webhook-action@master
-        if: !${{ steps.fetchTestResults.outputs.results }}
+        if: ${{ !steps.fetchTestResults.outputs.results }}
         with:
           url: https://app.devskills.co/api/assignment-status
           body: '{"assignmentRepository": "${{ env.github_repo }}","results": []}'
