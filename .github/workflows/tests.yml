@@ -14,6 +14,10 @@ jobs:
       - name: Fetch apiUrl
         run: echo ::set-output name=apiUrl::$(jq -r .env.apiUrl cypress.json)/ping
         id: fetchApiUrl
+      - name: Ensure mochawesome
+        run: 'jq -r ".[\"devDependencies\"] |= (.mochawesome = \"^6.2.2\")" package.json > package.json.tmp && mv package.json.tmp package.json'
+      - name: Install deps
+        run: npm install
       - name: Update test reporter
         run: 'jq -M ". + {\"reporter\": \"mochawesome\", \"reporterOptions\": { \"reportDir\": \"cypress/results\", \"overwrite\": false, \"html\": false, \"json\": true }}" cypress.json > cypress.json.tmp && mv cypress.json.tmp cypress.json'
       - name: Run tests
