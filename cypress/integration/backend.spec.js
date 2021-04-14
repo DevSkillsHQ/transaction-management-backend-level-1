@@ -1,120 +1,170 @@
+// DO NOT CHANGE THIS FILE!
+
 const apiUrl = `${Cypress.env("apiUrl")}`
 
-describe('Account Management Backend - Level 1', () => {
+function uuid() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
 
-  it('should create a transaction and fetch the updated account balance', () => {
-    cy.request({ // create transaction
+describe('Transaction Management Backend - Level 2', () => {
+
+  it('Provides a functional healthcheck', () => {
+    cy.request({
+      failOnStatusCode: false,
+      method: 'GET',
+      url: `${apiUrl}/ping`,
+    }).then((response) => {
+      expect(response.status).to.eq(200)
+    })
+  })
+
+  it('Can create and read transactions and accounts with positive amounts', () => {
+    const accountId = uuid()
+    let transactionId
+    cy.request({
       failOnStatusCode: false,
       method: 'POST',
-      url: `${apiUrl}/amount`,
+      url: `${apiUrl}/transaction`,
       headers: {
-        "Content-Type": "application/json",
-        "Transaction-Id": "7943f961-a733-43cf-ba3d-905a5856f6da"
+        "Content-Type": "application/json"
       },
       body: {
-        account_id: "a40bcc03-6f39-418c-ad0b-97e14f522ec1",
+        account_id: accountId,
         amount: 7
       }
     }).then((response) => {
-      expect(response.status).to.eq(200)
-    }).request({ // read account balance
+      expect(response.status).to.eq(201)
+      expect(response.body.transaction_id).to.not.be.undefined
+      transactionId = response.body.transaction_id
+    }).request({
       failOnStatusCode: false,
       method: 'GET',
-      url: `${apiUrl}/balance/a40bcc03-6f39-418c-ad0b-97e14f522ec1`,
+      url: `${apiUrl}/transaction/${transactionId}`,
     }).then((response) => {
       expect(response.status).to.eq(200)
+      expect(response.body.transaction_id).to.eq(transactionId)
+      expect(response.body.account_id).to.eq(accountId)
+      expect(response.body.amount).to.eq(7)
+    }).request({
+      failOnStatusCode: false,
+      method: 'GET',
+      url: `${apiUrl}/accounts/${accountId}`,
+    }).then((response) => {
+      expect(response.status).to.eq(200)
+      expect(response.body.account_id).to.eq(accountId)
       expect(response.body.balance).to.eq(7)
     })
   })
 
-  it('should create transactions with negative and zero amounts', () => {
-    cy.request({ // positive amount
+  it('Can create and read transactions and accounts with negative & zero amounts', () => {
+    const accountId = uuid()
+    let transactionId
+
+    cy.request({
       failOnStatusCode: false,
       method: 'POST',
-      url: `${apiUrl}/amount`,
+      url: `${apiUrl}/transaction`,
       headers: {
         "Content-Type": "application/json",
-        "Transaction-Id": "3dc5b8b7-55b3-4c7e-bd34-3c1f2aedf0c2"
       },
       body: {
-        account_id: "0b230303-0156-45a9-b996-16574b6be525",
+        account_id: accountId,
         amount: 4
       }
     }).then((response) => {
-      expect(response.status).to.eq(200)
-    }).request({ // read account balance
+      expect(response.status).to.eq(201)
+      expect(response.body.transaction_id).to.not.be.undefined
+      transactionId = response.body.transaction_id
+    }).request({
       failOnStatusCode: false,
       method: 'GET',
-      url: `${apiUrl}/balance/0b230303-0156-45a9-b996-16574b6be525`,
+      url: `${apiUrl}/accounts/${accountId}`,
     }).then((response) => {
       expect(response.status).to.eq(200)
+      expect(response.body.account_id).to.eq(accountId)
       expect(response.body.balance).to.eq(4)
-    }).request({ // negative amount
+    }).request({
       failOnStatusCode: false,
       method: 'POST',
-      url: `${apiUrl}/amount`,
+      url: `${apiUrl}/transaction`,
       headers: {
         "Content-Type": "application/json",
-        "Transaction-Id": "05a9b3c7-6e4e-4e7b-b161-cf64188a7ec9"
       },
       body: {
-        account_id: "0b230303-0156-45a9-b996-16574b6be525",
+        account_id: accountId,
         amount: -3
       }
     }).then((response) => {
-      expect(response.status).to.eq(200)
+      expect(response.status).to.eq(201)
+      expect(response.body.transaction_id).to.not.be.undefined
+      transactionId = response.body.transaction_id
     }).request({ // read account balance
       failOnStatusCode: false,
       method: 'GET',
-      url: `${apiUrl}/balance/0b230303-0156-45a9-b996-16574b6be525`,
+      url: `${apiUrl}/accounts/${accountId}`,
     }).then((response) => {
       expect(response.status).to.eq(200)
+      expect(response.body.account_id).to.eq(accountId)
       expect(response.body.balance).to.eq(1)
-    }).request({ // zero amount
+    }).request({
       failOnStatusCode: false,
       method: 'POST',
-      url: `${apiUrl}/amount`,
+      url: `${apiUrl}/transaction`,
       headers: {
         "Content-Type": "application/json",
-        "Transaction-Id": "e5c8e767-54c3-4156-acf3-617a5a15c053"
       },
       body: {
-        account_id: "0b230303-0156-45a9-b996-16574b6be525",
+        account_id: accountId,
         amount: 0
       }
     }).then((response) => {
-      expect(response.status).to.eq(200)
-    }).request({ // read account balance
+      expect(response.status).to.eq(201)
+      expect(response.body.transaction_id).to.not.be.undefined
+      transactionId = response.body.transaction_id
+    }).request({
       failOnStatusCode: false,
       method: 'GET',
-      url: `${apiUrl}/balance/0b230303-0156-45a9-b996-16574b6be525`,
+      url: `${apiUrl}/accounts/${accountId}`,
     }).then((response) => {
       expect(response.status).to.eq(200)
+      expect(response.body.account_id).to.eq(accountId)
       expect(response.body.balance).to.eq(1)
     })
   })
 
-  it('should return NOT_FOUND for non-existent accounts', () => {
+  it('Can handle requests for non-existent accounts and transactions', () => {
+    const accountId = uuid()
+    const transactionId = uuid()
+
     cy.request({
       failOnStatusCode: false,
       method: 'GET',
-      url: `${apiUrl}/balance/96a11d04-4a69-47be-9e40-923d962eb7b4`,
+      url: `${apiUrl}/accounts/${accountId}`,
+    }).then((response) => {
+      expect(response.status).to.eq(404)
+    }).request({
+      failOnStatusCode: false,
+      method: 'GET',
+      url: `${apiUrl}/transaction/${transactionId}`,
     }).then((response) => {
       expect(response.status).to.eq(404)
     })
   })
 
-  it('should handle invalid requests gracefully', () => {
+  it('Can handle invalid requests', () => {
+    const accountId = uuid()
     cy.request({
       failOnStatusCode: false,
       method: 'PUT', // wrong method
-      url: `${apiUrl}/amount`,
+      url: `${apiUrl}/transaction`,
       headers: {
         "Content-Type": "application/json",
-        "Transaction-Id": "417a48dd-b73e-45fc-9ee0-c5d97c46748f"
       },
       body: {
-        account_id: "a40bcc03-6f39-418c-ad0b-97e14f522ec1",
+        account_id: accountId,
         amount: 10
       }
     }).then((response) => {
@@ -122,13 +172,12 @@ describe('Account Management Backend - Level 1', () => {
     }).request({
       failOnStatusCode: false,
       method: 'POST',
-      url: `${apiUrl}/amount`,
+      url: `${apiUrl}/transaction`,
       headers: {
         "Content-Type": "application/xml", // wrong Content-Type
-        "Transaction-Id": "59b2917e-6407-40eb-8fbf-287435fcd6f8"
       },
       body: {
-        account_id: "a40bcc03-6f39-418c-ad0b-97e14f522ec1",
+        account_id: accountId,
         amount: 10
       }
     }).then((response) => {
@@ -136,10 +185,9 @@ describe('Account Management Backend - Level 1', () => {
     }).request({
       failOnStatusCode: false,
       method: 'POST',
-      url: `${apiUrl}/amount`,
+      url: `${apiUrl}/transaction`,
       headers: {
         "Content-Type": "application/json",
-        "Transaction-Id": "6eadf15c-fc8a-4584-b708-31a56df13563"
       },
       body: { // missing account_id
         amount: 7
@@ -149,23 +197,21 @@ describe('Account Management Backend - Level 1', () => {
     }).request({
       failOnStatusCode: false,
       method: 'POST',
-      url: `${apiUrl}/amount`,
+      url: `${apiUrl}/transaction`,
       headers: {
         "Content-Type": "application/json",
-        "Transaction-Id": "a02beed9-c81f-4030-a868-b9cb308d961c"
       },
       body: { // missing amount
-        account_id: "a40bcc03-6f39-418c-ad0b-97e14f522ec1"
+        account_id: accountId
       }
     }).then((response) => {
       expect(response.status).to.eq(400)
     }).request({
       failOnStatusCode: false,
       method: 'POST',
-      url: `${apiUrl}/amount`,
+      url: `${apiUrl}/transaction`,
       headers: {
         "Content-Type": "application/json",
-        "Transaction-Id": "29b0370f-05c0-4d17-a406-3f825997b0f5"
       },
       body: {
         account_id: 10, // bad format
@@ -175,4 +221,5 @@ describe('Account Management Backend - Level 1', () => {
       expect(response.status).to.eq(400)
     })
   })
+
 })
