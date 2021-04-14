@@ -9,7 +9,7 @@ function uuid() {
   });
 }
 
-describe('Transaction Management Backend - Level 2', () => {
+describe('Transaction Management Backend - Level 1', () => {
 
   it('Provides a functional healthcheck', () => {
     cy.request({
