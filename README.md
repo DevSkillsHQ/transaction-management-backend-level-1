@@ -1,6 +1,6 @@
 # Transaction Management Backend - Level 1
 
-Your task is to **build a backend app** that **fulfills the [Transaction Management API](https://infra.devskills.app/transaction-management/api/2.0.0)** and **make the provided API tests pass**.
+Your task is to **build a backend app** that **fulfills the [Transaction Management API](https://infra.devskills.app/transaction-management/api/3.0.0)** and **make the provided API tests pass**.
 
 Please agree with your hiring team regarding the tech stack choice.
 
