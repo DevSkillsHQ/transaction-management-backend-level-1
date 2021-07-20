@@ -20,7 +20,7 @@ Follow [this link](https://docs.devskills.co/collections/85-the-interview-proces
 
 ### Get familiar with the API
 
-Follow [this link](https://infra.devskills.app/transaction-management/api/3.0.0) to find the API documentation. Feel free to try out a few requests to better understand how the API should work.
+Follow [this link](https://infra.devskills.app/transaction-management/api/3.1.0) to find the API documentation. Feel free to try out a few requests to better understand how the API should work.
 
 ### Try running the API tests locally
 
