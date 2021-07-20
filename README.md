@@ -22,14 +22,35 @@ Follow [this link](https://docs.devskills.co/collections/85-the-interview-proces
 
 Follow [this link](https://infra.devskills.app/transaction-management/api/3.1.0) to find the API documentation. Feel free to try out a few requests to better understand how the API should work.
 
-### Try running the API tests locally
+### Try running the API tests
 
+<details>
+<summary>Remotely on the pipeline</summary>
+
+Create and switch to a new `implementation` branch and push your code. This will trigger a new pipeline run which will execute the tests.
+  
+Check the 'Actions' tab to see the historical runs.
+
+</details>
+
+
+<details>
+<summary>Locally with Docker</summary>
+  
+#### Prerequisites
+
+- [Install Docker](https://www.docker.com/get-started)
+- Start your app
+  
+#### Run the tests
 ```bash
-npm install
-npm run build # should build your app
-npm run start # should start your app
-npm run test
+ docker run --add-host host.docker.internal:host-gateway -v $PWD:/e2e -w /e2e cypress/included:3.4.0
 ```
+
+You can either use the console output or generated screenshots/videos (*check the newly created files that appear after a test run*) to troubleshoot the test results.
+
+
+</details>
 
 ### What we expect from you
 
@@ -37,7 +58,8 @@ npm run test
 2. Keep server data in a [SQLite](https://www.sqlite.org/index.html) database. We want to see how you design the database schema and SQL queries.
 3. Push your code to the new `implementation` branch. We encourage you to commit and push your changes regularly as it's a good way for you to showcase your thinking process.
 4. Create a new pull request, but please **do not merge it**.
-5. Await further instructions from the hiring team.
+5. Document the tech decisions you've made by creating a new review on your PR ([see how](https://www.loom.com/share/94ae305e7fbf45d592099ac9f40d4274)).
+6. Await further instructions from the hiring team.
 
 ## Need help?
 
@@ -45,7 +67,7 @@ Start with [Troubleshooting](https://www.notion.so/Troubleshooting-d18bdb5d2ac34
 
 ## Time estimate
 
-About **1-2 hours** depending on your experience level. But don't worry! There is no countdown. This number is for you to plan your time.
+About **1-3 hours** depending on your experience level. But don't worry! There is no countdown. This number is for you to plan your time.
 
 ---
 
