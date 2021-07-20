@@ -22,14 +22,35 @@ Follow [this link](https://docs.devskills.co/collections/85-the-interview-proces
 
 Follow [this link](https://infra.devskills.app/transaction-management/api/3.1.0) to find the API documentation. Feel free to try out a few requests to better understand how the API should work.
 
-### Try running the API tests locally
+### Try running the API tests
 
+<details>
+<summary>Remotely on the pipeline</summary>
+
+Create and switch to a new `implementation` branch and push your code. This will trigger a new pipeline run which will execute the tests.
+  
+Check the 'Actions' tab to see the historical runs.
+
+</details>
+
+
+<details>
+<summary>Locally with Docker</summary>
+  
+#### Prerequisites
+
+- [Install Docker](https://www.docker.com/get-started)
+- Start your app
+  
+#### Run the tests
 ```bash
-npm install
-npm run build # should build your app
-npm run start # should start your app
-npm run test
+ docker run --add-host host.docker.internal:host-gateway -v $PWD:/e2e -w /e2e cypress/included:3.4.0
 ```
+
+You can either use the console output or generated screenshots/videos (*check the newly created files that appear after a test run*) to troubleshoot the test results.
+
+
+</details>
 
 ### What we expect from you
 
