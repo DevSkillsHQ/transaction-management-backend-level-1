@@ -35,7 +35,7 @@ Check the 'Actions' tab to see the historical runs.
 
 
 <details>
-<summary>Locally with Docker</summary>
+<summary>Locally with Docker (Mac & Windows only)</summary>
   
 #### Prerequisites
 
@@ -49,6 +49,24 @@ Check the 'Actions' tab to see the historical runs.
 
 You can either use the console output or generated screenshots/videos (*check the newly created files that appear after a test run*) to troubleshoot the test results.
 
+
+</details>
+
+<details>
+<summary>Locally with npm</summary>
+  
+#### Prerequisites
+
+1. [Install node](https://nodejs.org/en/)
+2. When in the project's root, run: `sed 's/host.docker.internal/localhost/g' cypress.json > cypress.json.tmp && mv cypress.json.tmp cypress.json`  
+3. Start your app
+  
+#### Run the tests
+```bash
+ npm run test
+```
+
+You can either use the console output or generated screenshots/videos (*check the newly created files that appear after a test run*) to troubleshoot the test results.
 
 </details>
 
