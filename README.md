@@ -89,8 +89,6 @@ About **1-3 hours** depending on your experience level. But don't worry! There i
 
 ---
 
----
-
 Authored by [Rafa Paliwoda](https://devskills.co/authors/rafa-paliwoda) via [DevSkills](https://devskills.co).
 
 How was your experience? **Give us a shout on [Twitter](https://twitter.com/DevSkillsHQ) / [LinkedIn](https://www.linkedin.com/company/devskills)**.
