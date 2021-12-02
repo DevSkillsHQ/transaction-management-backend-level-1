@@ -36,27 +36,27 @@ describe('Transaction Management Backend - Level 1', () => {
         amount: 7
       }
     }).then((response) => {
-      expect(response.status).to.eq(201)
-      expect(response.body.transaction_id).to.not.be.undefined
+      assert.equal(response.status, 201, "Creating a transation should result with 201 status code")
+      assert.isDefined(response.body.transaction_id, "A transaction id must be returned")
       transactionId = response.body.transaction_id
       cy.request({
         failOnStatusCode: false,
         method: 'GET',
         url: `${apiUrl}/transactions/${transactionId}`,
       }).then((response) => {
-        expect(response.status).to.eq(200)
-        expect(response.body.transaction_id).to.eq(transactionId)
-        expect(response.body.account_id).to.eq(accountId)
-        expect(response.body.amount).to.eq(7)
+        assert.equal(response.status, 200, "Getting an existing transaction by its id should give 200 status code")
+        assert.equal(response.body.transaction_id, transactionId, "Got a transaction of a different id than queried for")
+        assert.equal(response.body.account_id, accountId, "Account different than expected")
+        assert.equal(response.body.amount, 7, "Got unexpected transaction amount value")
       })
     }).request({
       failOnStatusCode: false,
       method: 'GET',
       url: `${apiUrl}/accounts/${accountId}`,
     }).then((response) => {
-      expect(response.status).to.eq(200)
-      expect(response.body.account_id).to.eq(accountId)
-      expect(response.body.balance).to.eq(7)
+      assert.equal(response.status, 200, "Getting existing transaction shoulbe give 200 OK")
+      assert.equal(response.body.account_id, accountId, "Got unexpected account_id value")
+      assert.equal(response.body.balance, 7, "Incorrect account balance returned")
     })
   })
 
@@ -76,17 +76,17 @@ describe('Transaction Management Backend - Level 1', () => {
         amount: 4
       }
     }).then((response) => {
-      expect(response.status).to.eq(201)
-      expect(response.body.transaction_id).to.not.be.undefined
+      assert.equal(response.status, 201, "Creating a transation should result with 201 status code")
+      assert.isDefined(response.body.transaction_id, "A transaction id must be returned")
       transactionId = response.body.transaction_id
     }).request({
       failOnStatusCode: false,
       method: 'GET',
       url: `${apiUrl}/accounts/${accountId}`,
     }).then((response) => {
-      expect(response.status).to.eq(200)
-      expect(response.body.account_id).to.eq(accountId)
-      expect(response.body.balance).to.eq(4)
+      assert.equal(response.status, 200, "Getting existing account should give 200 OK")
+      assert.equal(response.body.account_id, accountId, "Got unexpected account_id value")
+      assert.equal(response.body.balance, 7, "Incorrect account balance returned")
     }).request({
       failOnStatusCode: false,
       method: 'POST',
@@ -99,17 +99,17 @@ describe('Transaction Management Backend - Level 1', () => {
         amount: -3
       }
     }).then((response) => {
-      expect(response.status).to.eq(201)
-      expect(response.body.transaction_id).to.not.be.undefined
+      assert.equal(response.status, 201, "Creating a transation should result with 201 status code")
+      assert.isDefined(response.body.transaction_id, "A transaction id must be returned")
       transactionId = response.body.transaction_id
     }).request({ // read account balance
       failOnStatusCode: false,
       method: 'GET',
       url: `${apiUrl}/accounts/${accountId}`,
     }).then((response) => {
-      expect(response.status).to.eq(200)
-      expect(response.body.account_id).to.eq(accountId)
-      expect(response.body.balance).to.eq(1)
+      assert.equal(response.status, 200, "Getting existing account should give 200 OK")
+      assert.equal(response.body.account_id, accountId, "Got unexpected account_id value")
+      assert.equal(response.body.balance, 1, "Incorrect account balance returned")
     }).request({
       failOnStatusCode: false,
       method: 'POST',
@@ -122,17 +122,17 @@ describe('Transaction Management Backend - Level 1', () => {
         amount: 0
       }
     }).then((response) => {
-      expect(response.status).to.eq(201)
-      expect(response.body.transaction_id).to.not.be.undefined
+      assert.equal(response.status, 201, "Creating a transation should result with 201 status code")
+      assert.isDefined(response.body.transaction_id, "A transaction id must be returned")
       transactionId = response.body.transaction_id
     }).request({
       failOnStatusCode: false,
       method: 'GET',
       url: `${apiUrl}/accounts/${accountId}`,
     }).then((response) => {
-      expect(response.status).to.eq(200)
-      expect(response.body.account_id).to.eq(accountId)
-      expect(response.body.balance).to.eq(1)
+      assert.equal(response.status, 200, "Getting existing account should give 200 OK")
+      assert.equal(response.body.account_id, accountId, "Got unexpected account_id value")
+      assert.equal(response.body.balance, 1, "Incorrect account balance returned")
     })
   })
 
@@ -145,13 +145,13 @@ describe('Transaction Management Backend - Level 1', () => {
       method: 'GET',
       url: `${apiUrl}/accounts/${accountId}`,
     }).then((response) => {
-      expect(response.status).to.eq(404)
+      assert.equal(response.status, 404, "Reading an inexistent account returns 404")
     }).request({
       failOnStatusCode: false,
       method: 'GET',
       url: `${apiUrl}/transactions/${transactionId}`,
     }).then((response) => {
-      expect(response.status).to.eq(404)
+      assert.equal(response.status, 404, "Reading an inexistent transaction returns 404")
     })
   })
 
@@ -169,7 +169,7 @@ describe('Transaction Management Backend - Level 1', () => {
         amount: 10
       }
     }).then((response) => {
-      expect(response.status).to.eq(405)
+      assert.equal(response.status, 405, "Method not allowed status code returned")
     }).request({
       failOnStatusCode: false,
       method: 'POST',
@@ -182,7 +182,7 @@ describe('Transaction Management Backend - Level 1', () => {
         amount: 10
       }
     }).then((response) => {
-      expect(response.status).to.eq(415)
+      assert.equal(response.status, 415, "Incorrect content-type")
     }).request({
       failOnStatusCode: false,
       method: 'POST',
@@ -194,7 +194,7 @@ describe('Transaction Management Backend - Level 1', () => {
         amount: 7
       }
     }).then((response) => {
-      expect(response.status).to.eq(400)
+      assert.equal(response.status, 400, "Bad request status code should be returned in case of missing account_id")
     }).request({
       failOnStatusCode: false,
       method: 'POST',
@@ -206,7 +206,7 @@ describe('Transaction Management Backend - Level 1', () => {
         account_id: accountId
       }
     }).then((response) => {
-      expect(response.status).to.eq(400)
+      assert.equal(response.status, 400, "Bad request status code should be returned in case of missing amount")
     }).request({
       failOnStatusCode: false,
       method: 'POST',
@@ -219,7 +219,7 @@ describe('Transaction Management Backend - Level 1', () => {
         amount: 7
       }
     }).then((response) => {
-      expect(response.status).to.eq(400)
+      assert.equal(response.status, 400, "Bad request status code should be returned in case of malformed transaction id")
     })
   })
 
