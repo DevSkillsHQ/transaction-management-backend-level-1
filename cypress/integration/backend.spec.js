@@ -37,7 +37,7 @@ describe('Transaction Management Backend - Level 1', () => {
       }
     }).then((response) => {
       assert.equal(response.status, 201, "Creating a transation should result with 201 status code")
-      assert.isDefined(response.body.transaction_id, "A transaction id must be returned")
+      assert.isDefined(response.body.transaction_id, "A transaction id should be returned")
       transactionId = response.body.transaction_id
       cy.request({
         failOnStatusCode: false,
@@ -54,7 +54,7 @@ describe('Transaction Management Backend - Level 1', () => {
       method: 'GET',
       url: `${apiUrl}/accounts/${accountId}`,
     }).then((response) => {
-      assert.equal(response.status, 200, "Getting existing transaction shoulbe give 200 OK")
+      assert.equal(response.status, 200, "Getting existing transaction should return 200 OK")
       assert.equal(response.body.account_id, accountId, "Got unexpected account_id value")
       assert.equal(response.body.balance, 7, "Incorrect account balance returned")
     })
@@ -145,13 +145,13 @@ describe('Transaction Management Backend - Level 1', () => {
       method: 'GET',
       url: `${apiUrl}/accounts/${accountId}`,
     }).then((response) => {
-      assert.equal(response.status, 404, "Reading an inexistent account returns 404")
+      assert.equal(response.status, 404, "Reading an inexistent account should return 404")
     }).request({
       failOnStatusCode: false,
       method: 'GET',
       url: `${apiUrl}/transactions/${transactionId}`,
     }).then((response) => {
-      assert.equal(response.status, 404, "Reading an inexistent transaction returns 404")
+      assert.equal(response.status, 404, "Reading an inexistent transaction should return 404")
     })
   })
 
@@ -169,7 +169,7 @@ describe('Transaction Management Backend - Level 1', () => {
         amount: 10
       }
     }).then((response) => {
-      assert.equal(response.status, 405, "Method not allowed status code returned")
+      assert.equal(response.status, 405, "Method not allowed status code should be returned when using a wrong HTTP method")
     }).request({
       failOnStatusCode: false,
       method: 'POST',
@@ -182,7 +182,7 @@ describe('Transaction Management Backend - Level 1', () => {
         amount: 10
       }
     }).then((response) => {
-      assert.equal(response.status, 415, "Incorrect content-type")
+      assert.equal(response.status, 415, "Incorrect content-type should be returned when passing a wrong Content-Type header")
     }).request({
       failOnStatusCode: false,
       method: 'POST',
