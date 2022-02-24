@@ -86,7 +86,7 @@ describe('Transaction Management Backend - Level 1', () => {
     }).then((response) => {
       assert.equal(response.status, 200, "Getting existing account should give 200 OK")
       assert.equal(response.body.account_id, accountId, "Got unexpected account_id value")
-      assert.equal(response.body.balance, 7, "Incorrect account balance returned")
+      assert.equal(response.body.balance, 4, "Incorrect account balance returned")
     }).request({
       failOnStatusCode: false,
       method: 'POST',
