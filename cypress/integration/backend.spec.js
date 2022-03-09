@@ -60,7 +60,7 @@ describe('Transaction Management Backend - Level 1', () => {
     })
   })
 
-  it('Can create and read transactions and accounts with negative & zero amounts', () => {
+  it('Can create and read transactions and accounts with negative amounts', () => {
     const accountId = uuid()
     let transactionId
 
@@ -103,29 +103,6 @@ describe('Transaction Management Backend - Level 1', () => {
       assert.isDefined(response.body.transaction_id, "A transaction id must be returned")
       transactionId = response.body.transaction_id
     }).request({ // read account balance
-      failOnStatusCode: false,
-      method: 'GET',
-      url: `${apiUrl}/accounts/${accountId}`,
-    }).then((response) => {
-      assert.equal(response.status, 200, "Getting existing account should give 200 OK")
-      assert.equal(response.body.account_id, accountId, "Got unexpected account_id value")
-      assert.equal(response.body.balance, 1, "Incorrect account balance returned")
-    }).request({
-      failOnStatusCode: false,
-      method: 'POST',
-      url: `${apiUrl}/transactions`,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: {
-        account_id: accountId,
-        amount: 0
-      }
-    }).then((response) => {
-      assert.equal(response.status, 201, "Creating a transation should result with 201 status code")
-      assert.isDefined(response.body.transaction_id, "A transaction id must be returned")
-      transactionId = response.body.transaction_id
-    }).request({
       failOnStatusCode: false,
       method: 'GET',
       url: `${apiUrl}/accounts/${accountId}`,
