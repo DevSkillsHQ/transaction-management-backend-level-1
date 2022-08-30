@@ -3,3 +3,5 @@ cypress/videos
 cypress/plugins
 cypress/screenshots
 cypress/support
+
+.idea
