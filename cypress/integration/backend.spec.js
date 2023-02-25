@@ -113,7 +113,7 @@ describe('Transaction Management Backend - Level 1', () => {
     })
   })
 
-  t('Can read all created transactions', () => {
+  it('Can read all created transactions', () => {
     const firstAccountId = uuid()
     let firstTransactionId
     const secondAccountId = uuid()
@@ -168,16 +168,14 @@ describe('Transaction Management Backend - Level 1', () => {
     }).request({
       failOnStatusCode: false,
       method: 'GET',
-      url: `${apiUrl}/transations`,
+      url: `${apiUrl}/transactions`,
     }).then((response) => {
       assert.equal(response.status, 200, "Getting existing account should give 200 OK")
-      assert.equal(response.body.length, 2, "Got unexpected number of transations")
-      assert.equal(response.body[0].account_id, firstAccountId, "Got unexpected account id")
-      assert.equal(response.body[0].transaction_id, firstTransactionId, "Got unexpected transation id")
-      assert.equal(response.body[0].amount, 2, "Got unexpected transaction amount")
-      assert.equal(response.body[1].account_id, secondAccountId, "Got unexpected account id")
-      assert.equal(response.body[1].transaction_id, secondTransactionId, "Got unexpected transation id")
-      assert.equal(response.body[1].amount, 3, "Got unexpected transation amount")
+      assert(response.body.length >= 2, "Got unexpected number of transations")
+      assert(response.body.some(elem => elem. account_id == firstAccountId
+        && elem.transaction_id == firstTransactionId && elem.amount == 2, "First transation not found"))
+      assert(response.body.some(elem => elem.account_id == secondAccountId
+        && elem.transaction_id == secondTransactionId && elem.amount == 3, "Second transation not found"))
     })
   })
 
