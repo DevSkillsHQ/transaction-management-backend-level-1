@@ -36,7 +36,7 @@ describe('Transaction Management Backend - Level 1', () => {
         amount: 7
       }
     }).then((response) => {
-      assert.equal(response.status, 201, "Creating a transation should result with 201 status code")
+      assert.equal(response.status, 201, "Creating a transaction should result with 201 status code")
       assert.isDefined(response.body.transaction_id, "A transaction id should be returned")
       transactionId = response.body.transaction_id
       cy.request({
@@ -110,6 +110,72 @@ describe('Transaction Management Backend - Level 1', () => {
       assert.equal(response.status, 200, "Getting existing account should give 200 OK")
       assert.equal(response.body.account_id, accountId, "Got unexpected account_id value")
       assert.equal(response.body.balance, 1, "Incorrect account balance returned")
+    })
+  })
+
+  it('Can read all created transactions', () => {
+    const firstAccountId = uuid()
+    let firstTransactionId
+    const secondAccountId = uuid()
+    let secondTransactionId
+
+    cy.request({
+      failOnStatusCode: false,
+      method: 'POST',
+      url: `${apiUrl}/transactions`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: {
+        account_id: firstAccountId,
+        amount: 2
+      }
+    }).then((response) => {
+      assert.equal(response.status, 201, "Creating a transation should result with 201 status code")
+      assert.isDefined(response.body.transaction_id, "A transaction id must be returned")
+      firstTransactionId = response.body.transaction_id
+    }).request({
+      failOnStatusCode: false,
+      method: 'POST',
+      url: `${apiUrl}/transactions`,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: {
+        account_id: secondAccountId,
+        amount: 3
+      }
+    }).then((response) => {
+      assert.equal(response.status, 201, "Creating a transation should result with 201 status code")
+      assert.isDefined(response.body.transaction_id, "A transaction id must be returned")
+      secondTransactionId = response.body.transaction_id
+    }).request({
+      failOnStatusCode: false,
+      method: 'GET',
+      url: `${apiUrl}/accounts/${firstAccountId}`,
+    }).then((response) => {
+      assert.equal(response.status, 200, "Getting existing account should give 200 OK")
+      assert.equal(response.body.account_id, firstAccountId, "Got unexpected account_id value")
+      assert.equal(response.body.balance, 2, "Incorrect account balance returned")
+    }).request({
+      failOnStatusCode: false,
+      method: 'GET',
+      url: `${apiUrl}/accounts/${secondAccountId}`,
+    }).then((response) => {
+      assert.equal(response.status, 200, "Getting existing account should give 200 OK")
+      assert.equal(response.body.account_id, secondAccountId, "Got unexpected account_id value")
+      assert.equal(response.body.balance, 3, "Incorrect account balance returned")
+    }).request({
+      failOnStatusCode: false,
+      method: 'GET',
+      url: `${apiUrl}/transactions`,
+    }).then((response) => {
+      assert.equal(response.status, 200, "Getting existing account should give 200 OK")
+      assert(response.body.length >= 2, "Got unexpected number of transations")
+      assert(response.body.some(elem => elem. account_id == firstAccountId
+        && elem.transaction_id == firstTransactionId && elem.amount == 2, "First transation not found"))
+      assert(response.body.some(elem => elem.account_id == secondAccountId
+        && elem.transaction_id == secondTransactionId && elem.amount == 3, "Second transation not found"))
     })
   })
 
