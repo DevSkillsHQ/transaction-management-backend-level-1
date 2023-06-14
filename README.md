@@ -16,29 +16,25 @@ We have created a set of boilerplate projects for different tech stacks to help 
 
 To import a desired boilerplate project:
 
-1. Check out [this list](https://help.alvalabs.io/en/articles/7972852-supported-coding-test-boilerplates) to pick a desired boilerplate and copy its name (e.g `backend-boilerplate-php-laravel`).
-2. Go to "Actions" tab of your GitHub repository and select "Setup boilerplate".
-3. Click "Run workflow" and paste the copied name of the previously selected boilerplate along with the branch name where you want the boilerplate to be imported.
-4. Click "Run workflow". After the workflow has finished, your selected boilerplate will be imported to the specified branch.
+1. Check out [this list](https://help.alvalabs.io/en/articles/7972852-supported-coding-test-boilerplates) to pick a desired boilerplate and copy its name (e.g., `backend-boilerplate-php-laravel`).
+2. Go to the "Actions" tab of your GitHub repository and select the "Setup boilerplate" workflow in the left side panel.
+3. In the "Run workflow" dropdown, paste the previously copied boilerplate name along with the branch name where you want the boilerplate to be imported (e.g., `implementation`) and click the "Run workflow" button.
+4. After the workflow has finished, your selected boilerplate will be imported to the specified branch, and you can continue with your task there.
 
 <details>
-<summary>If you instead want to use a custom setup, do the steps below.</summary>
+<summary>If you instead want to use a custom setup, complete the steps below to make the E2E tests run correctly.</summary>
 
 1. Update the `apiUrl` (where your backend runs) in [cypress.json](cypress.json).
 2. Update the [`build`](package.json#L5) and [`start`](package.json#L6) scripts in [package.json](package.json) to respectively build and start your app.
 
 </details>
 
-### Get familiar with the API
-
-Follow [this link](https://infra.devskills.app/transaction-management/api/3.1.0) to find the API documentation.
-
 ### Try running the API tests
 
 <details>
-<summary>Remotely on the pipeline</summary>
+<summary>Remotely on the GitHub Actions pipeline</summary>
 
-Create and switch to a new `implementation` branch and push your code. This will trigger a new pipeline run which will execute the tests.
+Push your code to the new `implementation` branch (create it if it doesn't exist), which will trigger a new pipeline run that will run the tests.
   
 Check the 'Actions' tab to see the historical runs.
 
@@ -98,6 +94,4 @@ Also, there is no countdown. The estimate is for you to plan your time.
 
 ---
 
-Authored by [Rafa Paliwoda](https://devskills.co/authors/rafa-paliwoda) via [DevSkills](https://devskills.co).
-
-How was your experience? **[Don't hesitate to give us a shout](https://github.com/orgs/DevSkillsHQ/discussions/categories/feedback)**.
+Authored by [Alva Labs](https://www.alvalabs.io/).
