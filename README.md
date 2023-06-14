@@ -8,7 +8,7 @@ Please agree with your hiring team regarding the tech stack choice.
 
 ### If you run into a problem
 
-Need help? Head over to [our community on GitHub](https://github.com/orgs/DevSkillsHQ/discussions/categories/help) to get assistance.
+Head over to [our community on GitHub](https://github.com/orgs/DevSkillsHQ/discussions/categories/help) to get assistance.
 
 ### Configure your project
 
