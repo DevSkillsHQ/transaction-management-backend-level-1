@@ -10,13 +10,13 @@ Please agree with your hiring team regarding the tech stack choice.
 
 Head over to [our community on GitHub](https://github.com/orgs/DevSkillsHQ/discussions/categories/help) to get assistance.
 
-### Configure a starter project
+### Import a boilerplate project
 
-We have created a set of project boilerplates to help you get started quicker. These boilerplates include a starter project for each supported tech stack and the necessary setup for running the E2E tests.
+We have created a set of boilerplate projects for different tech stacks to help you get started quicker.
 
-To import a desired boilerplate:
+To import a desired boilerplate project:
 
-1. Pick which one you want to import from [this list](https://help.alvalabs.io/en/articles/7972852-supported-coding-test-boilerplates) and copy its name (e.g `backend-boilerplate-php-laravel`).
+1. Check out [this list](https://help.alvalabs.io/en/articles/7972852-supported-coding-test-boilerplates) to pick a desired boilerplate and copy its name (e.g `backend-boilerplate-php-laravel`).
 2. Go to "Actions" tab of your GitHub repository and select "Setup boilerplate".
 3. Click "Run workflow" and paste the copied name of the previously selected boilerplate along with the branch name where you want the boilerplate to be imported.
 4. Click "Run workflow". After the workflow has finished, your selected boilerplate will be imported to the specified branch.
