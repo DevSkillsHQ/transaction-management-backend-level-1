@@ -77,7 +77,7 @@ You can either use the console output or generated screenshots/videos (*check th
 
 </details>
 
-### What we expect from you
+## What we expect from you
 
 1. Make the provided API tests pass.
 2. Keep server data in a [SQLite](https://www.sqlite.org/index.html) database. We want to see how you design the database schema and SQL queries.
