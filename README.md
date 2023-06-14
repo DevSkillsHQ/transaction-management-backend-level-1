@@ -88,7 +88,7 @@ You can either use the console output or generated screenshots/videos (*check th
 
 ## Time estimate
 
-About **1-3 hours** depending on your experience level + the time to set up the project/environment (go with one of the provided boilerplates to move faster).
+Between **1-3 hours** depending on your experience level + the time to set up the project/environment (go with one of the provided boilerplates to move quicker).
 
 Also, there is no countdown. The estimate is for you to plan your time.
 
