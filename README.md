@@ -10,7 +10,7 @@ Please agree with your hiring team regarding the tech stack choice.
 
 Head over to [our community on GitHub](https://github.com/orgs/DevSkillsHQ/discussions/categories/help) to get assistance.
 
-### Configure your project
+### Configure a starter project
 
 We have created a set of project boilerplates to help you get started quicker. These boilerplates include a starter project for each supported tech stack and the necessary setup for running the E2E tests.
 
