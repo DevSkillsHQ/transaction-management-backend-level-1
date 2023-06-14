@@ -12,10 +12,17 @@ Need help? Head over to [our community on GitHub](https://github.com/orgs/DevSki
 
 ### Import boilerplate
 
+We have created a set of project boilerplates to help you get started faster.
+
+To import a desired boilerplate:
+
+1. Pick which one you want to import from [this list](https://help.alvalabs.io/en/articles/7972852-supported-coding-test-boilerplates).
+2. 
+
 Follow [this link](https://docs.devskills.co/collections/85-the-interview-process/articles/342-importing-challenge-boilerplate) to get the boilerplate code for your tech stack to configure a minimal setup for running the E2E tests.
 
 <details>
-<summary>Alternatively, use the manual setup.</summary>
+<summary>If you instead want to use a custom setup, do the steps below.</summary>
 
 1. Update the `apiUrl` (where your backend runs) in [cypress.json](cypress.json).
 2. Update the [`build`](package.json#L5) and [`start`](package.json#L6) scripts in [package.json](package.json) to respectively build and start your app.
