@@ -14,7 +14,7 @@ Head over to [our community on GitHub](https://github.com/orgs/DevSkillsHQ/discu
 
 We have created a set of boilerplate projects for different tech stacks to help you get started quicker.
 
-To import a desired boilerplate project:
+To import a boilerplate project:
 
 1. Check out [this list](https://help.alvalabs.io/en/articles/7972852-supported-coding-test-boilerplates) to pick a desired boilerplate and copy its name (e.g., `backend-boilerplate-php-laravel`).
 2. Go to the "Actions" tab of your GitHub repository and select the "Setup boilerplate" workflow in the left side panel.
