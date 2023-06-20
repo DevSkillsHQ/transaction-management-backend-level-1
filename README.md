@@ -8,30 +8,33 @@ Please agree with your hiring team regarding the tech stack choice.
 
 ### If you run into a problem
 
-Need help? Head over to [our community on GitHub](https://github.com/orgs/DevSkillsHQ/discussions/categories/help) to get assistance.
+Head over to [our community on GitHub](https://github.com/orgs/DevSkillsHQ/discussions/categories/help) to get assistance.
 
-### Import boilerplate
+### Import a boilerplate project
 
-Follow [this link](https://docs.devskills.co/collections/85-the-interview-process/articles/342-importing-challenge-boilerplate) to get the boilerplate code for your tech stack to configure a minimal setup for running the E2E tests.
+We have created a set of boilerplate projects for different tech stacks to help you get started quicker.
+
+To import a boilerplate project:
+
+1. Check out [this list](https://help.alvalabs.io/en/articles/7972852-supported-coding-test-boilerplates) to pick a desired boilerplate and copy its name (e.g., `backend-boilerplate-php-laravel`).
+2. Go to the "Actions" tab of your GitHub repository and select the "Setup boilerplate" workflow in the left side panel.
+3. In the "Run workflow" dropdown, paste the previously copied boilerplate name along with the branch name where you want the boilerplate to be imported (e.g., `implementation`) and click the "Run workflow" button.
+4. After the workflow has finished, your selected boilerplate will be imported to the specified branch, and you can continue with your task there.
 
 <details>
-<summary>Alternatively, use the manual setup.</summary>
+<summary>If you instead want to use a custom setup, complete the steps below to make the E2E tests run correctly.</summary>
 
 1. Update the `apiUrl` (where your backend runs) in [cypress.json](cypress.json).
 2. Update the [`build`](package.json#L5) and [`start`](package.json#L6) scripts in [package.json](package.json) to respectively build and start your app.
 
 </details>
 
-### Get familiar with the API
-
-Follow [this link](https://infra.devskills.app/transaction-management/api/3.1.0) to find the API documentation.
-
 ### Try running the API tests
 
 <details>
-<summary>Remotely on the pipeline</summary>
+<summary>Remotely on the GitHub Actions pipeline</summary>
 
-Create and switch to a new `implementation` branch and push your code. This will trigger a new pipeline run which will execute the tests.
+Push your code to the new `implementation` branch (create it if it doesn't exist), which will trigger a new pipeline run that will run the tests.
   
 Check the 'Actions' tab to see the historical runs.
 
@@ -74,7 +77,7 @@ You can either use the console output or generated screenshots/videos (*check th
 
 </details>
 
-### What we expect from you
+## What we expect from you
 
 1. Make the provided API tests pass.
 2. Keep server data in a [SQLite](https://www.sqlite.org/index.html) database. We want to see how you design the database schema and SQL queries.
@@ -85,12 +88,10 @@ You can either use the console output or generated screenshots/videos (*check th
 
 ## Time estimate
 
-About **1-3 hours** depending on your experience level + the time to set up the project/environment (go with one of the provided boilerplates to move faster).
+Between **1-3 hours** depending on your experience level + the time to set up the project/environment (go with one of the provided boilerplates to move quicker).
 
 Also, there is no countdown. The estimate is for you to plan your time.
 
 ---
 
-Authored by [Rafa Paliwoda](https://devskills.co/authors/rafa-paliwoda) via [DevSkills](https://devskills.co).
-
-How was your experience? **[Don't hesitate to give us a shout](https://github.com/orgs/DevSkillsHQ/discussions/categories/feedback)**.
+Authored by [Alva Labs](https://www.alvalabs.io/).
