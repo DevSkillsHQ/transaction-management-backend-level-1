@@ -25,7 +25,7 @@ jobs:
         with:
           ruby-version: 3.1.2
       - name: Update host
-        run: "sed 's/host.docker.internal/localhost/g' cypress.json > cypress.json.tmp && mv cypress.json.tmp cypress.json"
+        run: "sed 's/host.docker.internal/localhost/g' cypress.config.js > temp.js && mv temp.js cypress.config.js"
       - name: Fetch apiUrl
         run: echo ::set-output name=apiUrl::$(jq -r .env.apiUrl cypress.json)/ping
         id: fetchApiUrl
@@ -34,9 +34,11 @@ jobs:
       - name: Install deps
         run: npm install
       - name: Update test reporter
-        run: 'jq -M ". + {\"reporter\": \"mochawesome\", \"reporterOptions\": { \"reportDir\": \"cypress/results\", \"overwrite\": false, \"html\": false, \"json\": true }}" cypress.json > cypress.json.tmp && mv cypress.json.tmp cypress.json'
+        run: |
+          sed 's/module.exports = defineConfig({/module.exports = defineConfig({\n  reporter: '\"'mochawesome'\"',/g' cypress.config.js > temp.js
+          mv temp.js cypress.config.js
       - name: Run tests
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v5
         with:
           build: npm run build
           start: npm run start
