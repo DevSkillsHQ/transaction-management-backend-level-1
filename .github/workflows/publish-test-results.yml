@@ -10,6 +10,6 @@ on:
 jobs:
   publish-test-results:
     name: Publish test results to Alva
-    uses: DevSkillsHQ/publish-test-results-workflow/.github/workflows/publish-test-results.yml@cypress12
+    uses: DevSkillsHQ/publish-test-results-workflow/.github/workflows/publish-test-results.yml@main
     permissions:
       contents: write
