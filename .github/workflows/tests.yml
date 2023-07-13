@@ -25,22 +25,18 @@ jobs:
         with:
           ruby-version: 3.1.2
       - name: Update host
-        run: "sed 's/host.docker.internal/localhost/g' cypress.config.js > temp.js && mv temp.js cypress.config.js"
+        run: "sed 's/host.docker.internal/localhost/g' cypress.json > cypress.json.tmp && mv cypress.json.tmp cypress.json"
       - name: Fetch apiUrl
-        run: |
-          URL=$(sed -n "s/.*apiUrl: *'\(.*\)'.*/\1/p" cypress.config.js)
-          echo ::set-output name=apiUrl::${URL}/ping
-        shell: bash
+        run: echo ::set-output name=apiUrl::$(jq -r .env.apiUrl cypress.json)/ping
+        id: fetchApiUrl
       - name: Ensure mochawesome
         run: 'jq -r ".[\"devDependencies\"] |= (.mochawesome = \"^6.2.2\")" package.json > package.json.tmp && mv package.json.tmp package.json'
       - name: Install deps
         run: npm install
       - name: Update test reporter
-        run: |
-          sed 's/module.exports = defineConfig({/module.exports = defineConfig({\n  reporter: '\"'mochawesome'\"',/g' cypress.config.js > temp.js
-          mv temp.js cypress.config.js
+        run: 'jq -M ". + {\"reporter\": \"mochawesome\", \"reporterOptions\": { \"reportDir\": \"cypress/results\", \"overwrite\": false, \"html\": false, \"json\": true }}" cypress.json > cypress.json.tmp && mv cypress.json.tmp cypress.json'
       - name: Run tests
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v2
         with:
           build: npm run build
           start: npm run start
