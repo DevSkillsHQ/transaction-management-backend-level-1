@@ -76,7 +76,7 @@ You can either use the console output or generated screenshots/videos (*check th
 #### Prerequisites
 
 1. [Install node](https://nodejs.org/en/)
-2. When in the project's root, run: `sed 's/host.docker.internal/localhost/g' cypress.json > cypress.json.tmp && mv cypress.json.tmp cypress.json`  
+2. When in the project's root, run: `sed 's/host.docker.internal/localhost/g' cypress.config.js > temp.js && mv temp.js cypress.config.js`  
 3. Start your app
   
 #### Run the tests
