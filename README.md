@@ -31,7 +31,7 @@ To import a boilerplate project:
 
 ### Working in a Gitpod environment
 
-If you prefer to avoid installing dependencies like Docker or npm on your local machine, Gitpod offers a handy solution. It provides free access to preconfigured, in-browser IDEs that are ready for immediate use.
+If you prefer to avoid installing dependencies like npm on your local machine, Gitpod offers a handy solution. It provides free access to preconfigured, in-browser IDEs that are ready for immediate use.
 
 To utilize this for your repository, here's what you need to do:
 
@@ -51,33 +51,13 @@ Check the 'Actions' tab to see the historical runs.
 
 </details>
 
-
-<details>
-<summary>Locally with Docker (Mac & Windows only)</summary>
-  
-#### Prerequisites
-
-- [Install Docker](https://www.docker.com/get-started)
-- Start your app
-  
-#### Run the tests
-```bash
- docker run --add-host host.docker.internal:host-gateway -v $PWD:/e2e -w /e2e cypress/included
-```
-
-You can either use the console output or generated screenshots/videos (*check the newly created files that appear after a test run*) to troubleshoot the test results.
-
-
-</details>
-
 <details>
 <summary>Locally with npm</summary>
   
 #### Prerequisites
 
 1. [Install node](https://nodejs.org/en/)
-2. When in the project's root, run: `sed 's/host.docker.internal/localhost/g' cypress.config.js > temp.js && mv temp.js cypress.config.js`  
-3. Start your app
+2. Start your app
   
 #### Run the tests
 ```bash
