@@ -62,7 +62,7 @@ Check the 'Actions' tab to see the historical runs.
   
 #### Run the tests
 ```bash
- docker run --add-host host.docker.internal:host-gateway -v $PWD:/e2e -w /e2e cypress/included:3.4.0
+ docker run --add-host host.docker.internal:host-gateway -v $PWD:/e2e -w /e2e cypress/included
 ```
 
 You can either use the console output or generated screenshots/videos (*check the newly created files that appear after a test run*) to troubleshoot the test results.
