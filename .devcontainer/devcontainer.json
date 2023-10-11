@@ -1,6 +1,6 @@
 {
 	"name": "Alva Universal Image",
-	"image": "mcr.microsoft.com/devcontainers/javascript-node",
+	"image": "mcr.microsoft.com/devcontainers/universal:linux",
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -8,23 +8,13 @@
 			]
 		}
 	},
-
 	"features": {
 		"ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
 			"packages": "xvfb,libnss3-dev,libatk1.0-0,libatk-bridge2.0-0,libgtk-3-0,libgbm-dev"
 		},
 		"ghcr.io/devcontainers/features/java:1": {
 			"version": "17.0.8-amzn"
-		},
-		"ghcr.io/devcontainers/features/php:1": {},
-		"ghcr.io/devcontainers/features/dotnet:2": {},
-		"ghcr.io/devcontainers/features/go:1": {},
-		"ghcr.io/devcontainers/features/ruby:1": {},
-		"ghcr.io/devcontainers/features/python:1": {},
-		"ghcr.io/devcontainers-contrib/features/elm-asdf:2": {},
-		"ghcr.io/devcontainers-contrib/features/vue-cli:2": {},
-		"ghcr.io/devcontainers-contrib/features/angular-cli:2": {},
-		"ghcr.io/devcontainers-contrib/features/ember-cli:1": {}
+		}
 	},	
 	"postCreateCommand": "sdk default java 17.0.8-amzn"
 }
