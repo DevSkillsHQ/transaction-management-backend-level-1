@@ -18,7 +18,7 @@
 		}
 	},
 	"hostRequirements": {
-	  "storage": "64gb"
+	  "storage": "48gb"
 	},	
 	"postCreateCommand": "sdk default java 17.0.8-amzn"
 }
