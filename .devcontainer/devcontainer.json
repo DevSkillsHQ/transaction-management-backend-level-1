@@ -1,6 +1,5 @@
 {
 	"name": "Alva Universal Image",
-	"image": "mcr.microsoft.com/devcontainers/universal:linux",
 	"customizations": {
 		"vscode": {
 			"extensions": [
