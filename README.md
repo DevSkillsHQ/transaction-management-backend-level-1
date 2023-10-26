@@ -71,7 +71,7 @@ Please agree with your hiring team regarding the tech stack choice.
 
 ## Time estimate
 
-Between **1 - 3 hours** + the time to set up the project/environment (we suggest you to import one of the provided project starters to save time).
+Between 1 - 3 hours + the time to set up the project/environment (we suggest you to import one of the provided project starters to save time).
 
 However, there is no countdown. The estimate is for you to plan your time.
 
