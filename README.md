@@ -9,7 +9,7 @@ Please agree with your hiring team regarding the tech stack choice.
 ## Additional requirements
 
 - Do your best to make the [provided E2E tests](cypress/e2e/test.cy.js) pass.
-- Keep the server data in memory.
+- Keep server data in a [SQLite](https://www.sqlite.org/index.html) database. We want to see how you design the database schema and SQL queries.
 
 ## Getting started
 
