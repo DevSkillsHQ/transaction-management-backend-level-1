@@ -1,87 +1,79 @@
 # Transaction Management Backend - Level 1
 
-Your task is to **build a backend app** that **fulfills the [Transaction Management API](https://infra.devskills.app/transaction-management/api/3.1.0)** and **make the provided API tests pass**.
+Your task is to build a backend app that allows the recording of financial transactions and viewing the transaction history.
+
+It should implement the [Transaction Management API specification](https://infra.devskills.app/transaction-management/api/3.1.0)** which is defined in the [Open API](https://www.openapis.org/) format.
 
 Please agree with your hiring team regarding the tech stack choice.
 
-## Before you get started
+## Additional requirements
 
-### If you run into a problem
+- Do your best to make the [provided E2E tests](cypress/e2e/test.cy.js) pass.
+- Keep the server data in memory.
 
-Head over to [our community on GitHub](https://github.com/orgs/DevSkillsHQ/discussions/categories/help) to get assistance.
-
-### Import a boilerplate project
-
-We have created a set of boilerplate projects for different tech stacks to help you get started quicker.
-
-To import a boilerplate project:
-
-1. Check out [this list](https://help.alvalabs.io/en/articles/7972852-supported-coding-test-boilerplates) to pick a desired boilerplate and copy its name (e.g., `backend-boilerplate-php-laravel`).
-2. Go to the "Actions" tab of your GitHub repository and select the "Setup boilerplate" workflow in the left side panel.
-3. In the "Run workflow" dropdown, paste the previously copied boilerplate name along with the branch name where you want the boilerplate to be imported (e.g., `implementation`) and click the "Run workflow" button.
-4. After the workflow has finished, your selected boilerplate will be imported to the specified branch, and you can continue with your task there.
+## Getting started
 
 <details>
-<summary>If you instead want to use a custom setup, complete the steps below to make the E2E tests run correctly.</summary>
+  <summary>If you run into a problem</summary>
 
-1. Update the `apiUrl` (where your backend runs) in [cypress.json](cypress.json).
-2. Update the [`build`](package.json#L5) and [`start`](package.json#L6) scripts in [package.json](package.json) to respectively build and start your app.
-
-</details>
-
-### Working in a Gitpod environment
-
-If you prefer to avoid installing dependencies like npm on your local machine, Gitpod offers a handy solution. It provides free access to preconfigured, in-browser IDEs that are ready for immediate use.
-
-To utilize this for your repository, here's what you need to do:
-
-1. Go to 'https://gitpod.io/#your-repo-url', replacing 'your-repo-url' with the actual URL of your repository. For instance, 'https://gitpod.io/#https://github.com/octocat/Hello-World'.
-2. Authenticate using your GitHub account.
-
-By following these steps, you'll quickly find yourself in an environment tailored for your coding test.
-
-### Try running the API tests
-
-<details>
-<summary>Remotely on the GitHub Actions pipeline</summary>
-
-Push your code to the new `implementation` branch (create it if it doesn't exist), which will trigger a new pipeline run that will run the tests.
-  
-Check the 'Actions' tab to see the historical runs.
+  Navigate to [our community on GitHub](https://github.com/orgs/DevSkillsHQ/discussions/categories/help) to get assistance.
 
 </details>
 
 <details>
-<summary>Locally with npm</summary>
-  
-#### Prerequisites
+  <summary>Import a starter project</summary>
 
-1. [Install node](https://nodejs.org/en/)
-2. Start your app
-  
-#### Run the tests
-```bash
- npm run test
-```
+  We have created a set of starter projects with different tech stacks to help you get started quickly.
 
-You can either use the console output or generated screenshots/videos (*check the newly created files that appear after a test run*) to troubleshoot the test results.
+  To import a starter project:
+
+  1. Go to the "Actions" tab of your GitHub repository and select the "Setup boilerplate" workflow in the left side panel.
+  2. In the "Run workflow" dropdown, select the desired boilerplate along with the branch name where you want the boilerplate to be imported (e.g., `implementation`) and click the "Run workflow" button (you can find all starter projects' definitions [here](https://help.alvalabs.io/en/articles/7972852-supported-coding-test-boilerplates)).
+
+  After the workflow has finished, your selected boilerplate will be imported to the specified branch, and you can continue from there.
+
+  > ⚠️ **Custom setup**
+  > 
+  > If you instead want to set up a custom project, complete the steps below to make the E2E tests run correctly:
+  > 1. Update the `baseUrl` (where your frontend runs) in [cypress.config.js](cypress.config.js).
+  > 2. Update the [`build`](package.json#L5) and [`start`](package.json#L6) scripts in [package.json](package.json) to respectively build and start your app.
+  
+</details>
+
+<details>
+  <summary>Prepare for coding</summary>
+
+  To get this repository to your local machine, clone it with `git clone`.
+
+  Alternatively, spin up a pre-configured in-browser IDE by clicking on the "Code" tab in this repository and then "Create codespace on {branch_name}".
+
+  ![CleanShot 2023-10-13 at 00 00 32@2x](https://github.com/DevSkillsHQ/transaction-management-fullstack-level-1/assets/1162212/598ff1ae-238d-4691-8b7c-eb2228fdefac)
 
 </details>
 
-## What we expect from you
+<details>
+  <summary>Running the E2E tests</summary>
 
-1. Make the provided API tests pass.
-2. Keep server data in a [SQLite](https://www.sqlite.org/index.html) database. We want to see how you design the database schema and SQL queries.
-3. Push your code to the new `implementation` branch. We encourage you to commit and push your changes regularly as it's a good way for you to showcase your thinking process.
-4. Create a new pull request, but please **do not merge it**.
+  > ⚠️ Before executing the tests, ensure [Node](https://nodejs.org/en) is installed and your app is running.
+  ```bash
+  npm install
+  npm run test
+  ```
+
+</details>
+
+## Submitting your solution for review
+
+1. Create a new `implementation` branch on this repository and push your code there.
+2. Create a new pull request from `implementation` **without merging it**.
 5. Document the tech decisions you've made by creating a new review on your PR ([see how](https://www.loom.com/share/94ae305e7fbf45d592099ac9f40d4274)).
 6. Await further instructions from the hiring team.
 
 ## Time estimate
 
-Between **1-3 hours** depending on your experience level + the time to set up the project/environment (go with one of the provided boilerplates to move quicker).
+Between **1 - 3 hours** + the time to set up the project/environment (we suggest you to import one of the provided project starters to save time).
 
-Also, there is no countdown. The estimate is for you to plan your time.
+However, there is no countdown. The estimate is for you to plan your time.
 
 ---
 
