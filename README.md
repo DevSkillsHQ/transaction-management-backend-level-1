@@ -1,6 +1,18 @@
-<!--TASK_INSTRUCTIONS_START-->
 # Transaction Management Backend - Level 1
 
+Below, you'll find the instructions for getting started with your task. Please read them carefully to avoid unexpected issues. Best of luck!
+
+## Time estimate
+
+Between 2 and 3 hours, plus the time to set up the codebase.
+
+## Mandatory steps before you get started
+
+1. Set up your codebase according to [either of the outlined options](https://help.alvalabs.io/en/articles/9028914-how-to-set-up-the-codebase-for-your-coding-test) for your coding test.
+2. Learn [how to get help](https://help.alvalabs.io/en/articles/9028899-how-to-ask-for-help-with-coding-tests) if you run into an issue with your coding test.
+
+## The task
+<!--TASK_INSTRUCTIONS_START-->
 Your task is to build a backend app that allows the recording of financial transactions and viewing the transaction history.
 
 It should implement the [Transaction Management API specification](https://infra.devskills.app/transaction-management/api/3.1.0), which is defined in the [Open API](https://www.openapis.org/) format.
@@ -388,18 +400,9 @@ Please agree with your hiring team regarding the tech stack choice.
 
 </details>
 
-## Submitting your solution for review
+## When you are done
 
-1. Create a new `implementation` branch on this repository and push your code there.
-2. Create a new pull request from `implementation` **without merging it**.
-5. Document the tech decisions you've made by creating a new review on your PR ([see how](https://www.loom.com/share/94ae305e7fbf45d592099ac9f40d4274)).
-6. Await further instructions from the hiring team.
-
-## Time estimate
-
-Between 1 - 3 hours + the time to set up the project/environment (we suggest importing one of the provided project starters to save time).
-
-However, there is no countdown. The estimate is for you to plan your time.
+[Create a new Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) from the branch where you've committed your solution code to the default branch of this repository. **Please do not merge the created Pull Request**.
 
 ---
 
