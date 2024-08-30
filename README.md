@@ -8,7 +8,7 @@ Between 2 and 3 hours, plus the time to set up the codebase.
 
 ## Mandatory steps before you get started
 
-1. Set up your codebase according to [either of the outlined options](https://help.alvalabs.io/en/articles/9028914-how-to-set-up-the-codebase-for-your-coding-test) for your coding test.
+1. You should already have your project setup from the coding test start page but if not check out [this guide here](https://help.alvalabs.io/en/articles/9028914-how-to-set-up-the-codebase-for-your-coding-test) for more information.
 2. Learn [how to get help](https://help.alvalabs.io/en/articles/9028899-how-to-ask-for-help-with-coding-tests) if you run into an issue with your coding test.
 
 ## The task
@@ -335,8 +335,6 @@ It should implement the [Transaction Management API specification](https://infra
 }
 ```
 </details>
-
-Please agree with your hiring team regarding the tech stack choice.
 
 ### Solution expectations
 
