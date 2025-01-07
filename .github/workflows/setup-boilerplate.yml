@@ -4,23 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       boilerplate:
-        type: choice
+        type: string
         description: Name of boilerplate
-        options:
-        - backend-boilerplate-php-laravel
-        - backend-boilerplate-expressjs
-        - backend-boilerplate-nestjs
-        - backend-boilerplate-hapi-js
-        - backend-boilerplate-dotnet
-        - backend-boilerplate-java-springboot
-        - backend-boilerplate-java-spring-webflux
-        - backend-boilerplate-kotlin-springboot
-        - backend-boilerplate-golang
-        - backend-boilerplate-ruby
-        - backend-boilerplate-django
-        - backend-boilerplate-fastapi
-        - backend-boilerplate-flask
-        - backend-boilerplate-sanic
         required: true
       branch-name:
         type: string
