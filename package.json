@@ -2,11 +2,22 @@
   "name": "account-management-backend-level-1",
   "version": "1.0.0",
   "scripts": {
-    "build": "echo build your app here",
-    "start": "echo start your app here",
-    "test": "cypress run"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "cypress run",
+    "test:dev": "concurrently \"npm run dev\" \"npm run wait:and:test\"",
+    "wait:and:test": "sleep 10 && npm test"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "sqlite3": "^5.1.6",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "cypress": "^12.17.1"
+    "cypress": "^12.17.1",
+    "concurrently": "^8.2.0"
   }
 }
