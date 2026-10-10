@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///workspaces/transaction-management-backend-level-1/pages/index.js"],"sourcesContent":["export default function Home() {\n  return (\n    <div style={{ padding: '20px' }}>\n      <h1>Transaction Management API</h1>\n      <p>This is a Next.js backend API for managing financial transactions.</p>\n      <ul>\n        <li>GET /api/ping - Health check</li>\n        <li>POST /api/transactions - Create transaction</li>\n        <li>GET /api/transactions - Get all transactions</li>\n        <li>GET /api/transactions/{`{transaction_id}`} - Get specific transaction</li>\n        <li>GET /api/accounts/{`{account_id}`} - Get account balance</li>\n      </ul>\n    </div>\n  );\n}"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBACE,qKAAC;QAAI,OAAO;YAAE,SAAS;QAAO;;0BAC5B,qKAAC;0BAAG;;;;;;0BACJ,qKAAC;0BAAE;;;;;;0BACH,qKAAC;;kCACC,qKAAC;kCAAG;;;;;;kCACJ,qKAAC;kCAAG;;;;;;kCACJ,qKAAC;kCAAG;;;;;;kCACJ,qKAAC;;4BAAG;4BAAuB,CAAC,gBAAgB,CAAC;4BAAC;;;;;;;kCAC9C,qKAAC;;4BAAG;4BAAmB,CAAC,YAAY,CAAC;4BAAC;;;;;;;;;;;;;;;;;;;AAI9C"}}]
+}
