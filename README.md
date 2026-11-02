@@ -41,7 +41,6 @@ It should implement the Transaction Management API specification, which is defin
           }
         },
         "required": [
-          "transaction_id",
           "account_id",
           "amount"
         ]
